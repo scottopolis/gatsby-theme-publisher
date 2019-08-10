@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter`,
-    description: `Gatsby starter site `,
+    title: `Gatsby Theme Publisher`,
+    description: `Gatsby starter site.`,
     author: `Scott Bolinger`,
     twitter: `scottbolinger`,
     wordPressUrl: `https://scottbolinger.com`
   },
   plugins: [
     {
-      resolve: `gatsby-theme-tailwindcss`,
+      resolve: `gatsby-theme-publisher`,
       options: {
         postCssPlugins: [require(`autoprefixer`)],
       },

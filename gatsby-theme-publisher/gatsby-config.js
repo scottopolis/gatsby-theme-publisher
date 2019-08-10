@@ -31,9 +31,17 @@ module.exports = options => {
           url: `https://scottbolinger.com/graphql`,
         },
       },
+      {
+        resolve: `gatsby-plugin-google-analytics`,
+        // options: {
+          // add your GA tracking id below
+        //   trackingId: `UA-12345456-2`,
+        // },
+      },
       `gatsby-plugin-sharp`,
       `gatsby-transformer-sharp`,
       `gatsby-plugin-sass`,
+      `gatsby-plugin-sitemap`,
       {
         resolve: 'gatsby-plugin-web-font-loader',
         options: {

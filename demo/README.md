@@ -1,4 +1,4 @@
-# Demo site for gatsby-theme-tailwindcss
+# Demo site for gatsby-theme-publisher
 
 A demo site which is using the theme in a very basic configuration.
 
