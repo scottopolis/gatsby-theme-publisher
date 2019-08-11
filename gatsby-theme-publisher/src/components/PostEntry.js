@@ -2,11 +2,12 @@ import React from 'react';
 import PostEntryTitle from './PostEntryTitle';
 import PostEntryMeta from './PostEntryMeta';
 import PostEntryMedia from './PostEntryMedia';
+import config from '../../config';
 
 const PostEntry = ({ post, classes = '' }) => {
 
   const excerpt = post.excerpt
-    ? post.excerpt
+    ? post.excerpt.replace(config.wordPressUrl, '')
     : `${post.content &&
         post.content
           .split(' ')

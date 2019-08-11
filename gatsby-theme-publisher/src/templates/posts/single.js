@@ -55,6 +55,8 @@ const Post = ({ pageContext: post }) => {
           </div>
 
           <EngagementBar post={post} />
+
+          <PostComments post={post} />
         </footer>
 
       </div>
