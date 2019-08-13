@@ -91,6 +91,10 @@ figcaption {
     width: 200px;
 }
 
+.comment-content p {
+    @apply text-sm;
+}
+
 @media (min-width: 1280px) {
 
     .archive-page .entry-meta, .blog-page .entry-meta {

@@ -28,7 +28,7 @@ module.exports = options => {
           // This is field under which it's accessible
           fieldName: `wpgraphql`,
           // Url to query from
-          url: `https://scottbolinger.com/graphql`,
+          url: `https://designbyscott.wpengine.com/graphql`,
         },
       },
       {

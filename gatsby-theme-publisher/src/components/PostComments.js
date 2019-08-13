@@ -1,31 +1,72 @@
-import React from 'react';
+import React, { Fragment } from "react"
+import { Query } from "react-apollo"
+import gql from "graphql-tag"
+import { ApolloProvider } from "react-apollo"
+import { client } from "../apollo/client"
 import moment from 'moment/moment'
 
-const PostComments = ({ post }) => {
+const GET_COMMENTS = gql`
+  query($postId: ID!) {
+    comments(where: { contentId: $postId }) {
+      nodes {
+        ...CommentFields
+      }
+    }
+  }
+  fragment CommentFields on Comment {
+    id
+    date
+    approved
+    content
+    author {
+      ...AuthorFields
+    }
+  }
+  fragment AuthorFields on CommentAuthor {
+    name
+    url
+  }
+`
 
-    if( !post.comments || !post.comments.nodes.length )
-    return(<></>);
+const PostComments = ({ post }) => {
+  var postId = post.postId
 
   return (
-      <div
-        id="post-comments"
-        className="container mt-8"
-      >
-        <h4 className="mb-6">Comments</h4>
-        { post.comments.nodes && post.comments.nodes.map( 
-        comment => <div key={comment.id} className="p-4 rounded border mb-6 bg-gray-100 overflow-hidden">
-                <h5 className="mb-0">{comment.author.name}</h5>
-                <p className="text-gray-500 text-xs">{moment(comment.date).format(`MMMM D, YYYY`)}</p>
-                <div 
-                className="comment-body"
-                dangerouslySetInnerHTML={{
-                __html: comment.content,
-                }}></div>
-            </div>
-        )}
-        <p className="text-xs text-gray-500 text-center">Comments are closed.</p>
-      </div>
-  );
-};
+    <div>
+      <h3 className="mb-6">Comments</h3>
+      <ApolloProvider client={client}>
+        <Query query={GET_COMMENTS} variables={{ postId }}>
+          {({ data, loading, error }) => {
+            if (loading) return <p>Loading comments...</p>
+            if (error) return <p>Error: ${error.message}</p>
+            const { comments } = data
 
-export default PostComments;
+            return (
+              <ul className="list-none p-0 m-0">
+                {comments.nodes.map(cmt => (
+                  <li
+                    key={cmt.id}
+                    className="bg-gray-100 rounded border p-4 mb-6"
+                  >
+                    <span className="comment-author block mb-1 font-bold">
+                      {cmt.author.name}
+                    </span>
+                    <span className="comment-date block mb-1 text-gray-500 text-xs">
+                    {moment(cmt.date).format(`MMMM D, YYYY`)}
+                    </span>
+                    <span
+                      className="comment-content"
+                      dangerouslySetInnerHTML={{ __html: cmt.content }}
+                    />
+                  </li>
+                ))}
+              </ul>
+            )
+          }}
+        </Query>
+      </ApolloProvider>
+    </div>
+  )
+}
+
+export default PostComments

@@ -4,7 +4,7 @@ module.exports = {
     description: `Gatsby starter site.`,
     author: `Scott Bolinger`,
     twitter: `scottbolinger`,
-    wordPressUrl: `https://scottbolinger.com`
+    wordPressUrl: `https://designbyscott.wpengine.com`
   },
   plugins: [
     {

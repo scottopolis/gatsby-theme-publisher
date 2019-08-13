@@ -8,6 +8,7 @@ import PostEntryMedia from '../../components/PostEntryMedia';
 import EngagementBar from '../../components/EngagementBar';
 import SEO from '../../components/SEO';
 import BlogOptin from "../../components/BlogOptin";
+import PostComments from '../../components/PostComments';
 
 const renderTermNodes = (nodes, termType) => (
   <span className="taxonomy-links text-xs">
