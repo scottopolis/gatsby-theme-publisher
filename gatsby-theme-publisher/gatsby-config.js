@@ -17,10 +17,6 @@ module.exports = options => {
         },
       },
       {
-        resolve: `gatsby-plugin-emotion`,
-        options: emotionOptions,
-      },
-      {
         resolve: `gatsby-source-graphql`,
         options: {
           // This type will contain remote schema Query type
