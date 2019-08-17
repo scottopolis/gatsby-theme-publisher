@@ -7,10 +7,15 @@
  * @type {{wordPressUrl: string}}
  */
 const config = {
+  title: `Scott Bolinger`,
+  description: `Scott Bolinger`,
+  author: `Scott Bolinger`,
+  twitter: `scottbolinger`,
   wordPressUrl: `https://designbyscott.wpengine.com`,
+  siteUrl: `https://scottbolinger.com`,
   dynamicComments: true,
   gaTrackingId: '',
-  mailChimpEndpoint: ''
+  mailChimpEndpoint: '',
 }
 
 module.exports = config

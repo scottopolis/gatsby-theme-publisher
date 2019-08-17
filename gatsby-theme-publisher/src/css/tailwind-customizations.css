@@ -55,6 +55,16 @@ a {
     @apply text-center;
 }
 
+.alignright {
+    float: right;
+    margin-left: 15px;
+}
+
+.alignleft {
+    float: left;
+    margin-right: 15px;
+}
+
 .aligncenter img, img.aligncenter {
     @apply block m-auto text-center w-full mb-4;
 }
@@ -94,6 +104,23 @@ figcaption {
 .comment-content p {
     @apply text-sm;
 }
+
+.comment-body p {
+    @apply text-sm;
+}
+
+.site-content blockquote {
+    @apply font-serif font-light pl-4 italic text-gray-600;
+}
+
+pre br {
+    @apply hidden;
+}
+
+pre p {
+    @apply mb-0 text-gray-100;
+}
+
 
 @media (min-width: 1280px) {
 

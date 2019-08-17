@@ -1,7 +1,7 @@
 import React from "react"
 import gql from "graphql-tag"
 import { Query } from "react-apollo"
-import Comment from "./comment"
+import Comment from "./Comment"
 import config from "../../config.js"
 
 const commentQuery = gql`

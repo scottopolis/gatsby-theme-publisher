@@ -34,7 +34,7 @@ const NextPost = ({ post }) => (
       return (
         <div className="flex items-center justify-end relative w-3/4">
           {nextPost && nextPost.featuredImage && (
-            <div className="thumbnail">
+            <div className="thumbnail mr-2">
               <img
                 src={nextPost.featuredImage.sourceUrl}
                 alt={nextPost.title}

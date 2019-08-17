@@ -34,7 +34,7 @@ const MENU_QUERY = graphql`
 
 const renderLink = menuItem =>
   menuItem.connectedObject.__typename === 'WPGraphQL_MenuItem' ? (
-    <a href={menuItem.url} className="uppercase text-xs" target="_blank" rel="noopener noreferrer">
+    <a href={menuItem.url} className="uppercase text-xs" rel="noopener noreferrer">
       {menuItem.label}
     </a>
   ) : createLocalLink(menuItem.url) ? (
@@ -106,7 +106,7 @@ const Menu = ({ location }) => {
               <MenuToggle onClick={openNav} />
 
               {navOpen && <BodyClass add="nav-open" />}
-              <div className="menu-primary-container">
+              <div className="menu-primary-container hidden sm:block">
 
               {/* <input type="text" className="menu-search rounded border p-1 float-left" ref={searchBar} onChange={handleSearch} /> */}
               

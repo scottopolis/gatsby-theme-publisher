@@ -21,6 +21,15 @@ const renderTermNodes = (nodes, termType) => (
   </span>
 );
 
+const syntaxHighlighter = content => {
+
+  var regex = /\[javascript\]|\[php\]|\[html\]|\[css\]/g;
+
+  var regex2 = /\[\/javascript\]|\[\/php\]|\[\/html\]|\[\/css\]/gi;
+
+  return {__html: content.replace(regex, '<pre class="bg-gray-900 text-gray-100 text-wrap overflow-scroll rounded p-4 font-mono">').replace(regex2, '</pre>') }
+}
+
 const renderTerms = (categoryNodes = [], tagNodes = []) => (
   <>
     {categoryNodes ? renderTermNodes(categoryNodes, 'category') : null}
@@ -46,7 +55,7 @@ const Post = ({ pageContext: post }) => {
 
         <div
           className="entry-content max-w-2xl m-auto"
-          dangerouslySetInnerHTML={{ __html: post.content }}
+          dangerouslySetInnerHTML={syntaxHighlighter(post.content)}
         />
         <footer className="entry-footer max-w-2xl m-auto">
           <BlogOptin />

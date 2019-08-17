@@ -2,6 +2,13 @@ const path = require(`path`)
 const config = require(`./config`)
 
 module.exports = {
+  siteMetadata: {
+    title: config.title,
+    description: config.description,
+    author: config.author,
+    twitter: config.twitter,
+    siteUrl: config.siteUrl,
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-postcss`,
