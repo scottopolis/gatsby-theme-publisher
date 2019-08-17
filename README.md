@@ -52,3 +52,5 @@ You can use my WP Netlify Deploy plugin to automatically rebuild on Netlify when
    ```
 
 5. Push to your own git repository, and publish on Netlify
+
+You can use my [WP Netlify Deploy plugin](https://github.com/scottopolis/wp-netlify-deploy) to automatically update your Gatsby front end when a post is created or updated. 

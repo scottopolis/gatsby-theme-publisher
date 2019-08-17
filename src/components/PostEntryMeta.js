@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 const PostEntryMeta = ({ post, location = '' }) => (
   <section className={ location === 'blog' ? 'entry-meta clearfix xl:flex xl:flex-col' : 'entry-meta clearfix' }>
 
-  {post.categories && location === 'blog' ? post.categories.nodes.map(category => <span key={category.id} className="bg-gray-200 rounded p-2 text-xs float-right xl:order-last xl:text-center">{category.name}</span>) : null }
+  {post.categories && location === 'blog' ? post.categories.nodes.map(category => <span key={category.id} className="bg-gray-200 rounded p-2 text-xs float-right xl:order-last xl:text-center ml-1">{category.name}</span>) : null }
 
     <div className="author-avatar mr-2 mt-1 h-8 float-left overflow-hidden">
       <img src={ post.author.avatar ? post.author.avatar.url : '' } className="rounded-full block h-8 border-gray-500 border" alt="Author avatar" />
