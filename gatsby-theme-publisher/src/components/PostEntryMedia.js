@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import Img from "gatsby-image"
 
 const WithLink = ({ post, location, children }) =>
   location === "single" ? (
@@ -21,15 +22,9 @@ const PostEntryMedia = ({ post, location, classes = '' }) => (
         className="entry-media__figure-wrapper mt-6 mb-10"
         style={{ maxWidth: 1736 }}
       >
-        <figure>
-          <img
-            src={post.featuredImage.sourceUrl}
-            srcSet={post.featuredImage.srcSet}
-            alt={post.title}
-            className="lazyload initial loaded shadow-2xl"
-            sizes="90vw, (min-width: 600px) 90vw, 60vw"
-          />
-        </figure>
+      {/* {JSON.stringify(post, null, 2)} */}
+        <Img fluid={post.featuredImage.imageFile.childImageSharp.fluid} className="shadow-2xl" alt={post.title} />
+
       </div>
     </WithLink>
   </div>

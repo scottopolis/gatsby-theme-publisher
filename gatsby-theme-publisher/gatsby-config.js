@@ -7,6 +7,7 @@ module.exports = options => {
     options && options.cssLoaderOptions ? options.cssLoaderOptions : {}
   const emotionOptions =
     options && options.emotionOptions ? options.emotionOptions : {}
+  const path = require(`path`)
   return {
     plugins: [
       {
@@ -33,6 +34,13 @@ module.exports = options => {
           // add your GA tracking id below
         //   trackingId: `UA-12345456-2`,
         // },
+      },
+      {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          name: `images`,
+          path: path.join(__dirname, `src`, `images`),
+        },
       },
       `gatsby-plugin-sharp`,
       `gatsby-transformer-sharp`,

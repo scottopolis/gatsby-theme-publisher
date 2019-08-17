@@ -11,3 +11,34 @@ exports.createPages = async ({ actions, graphql }) => {
   await createTags({ actions, graphql })
   await createUsers({ actions, graphql })
 }
+
+// Pull featured images into the project statically to serve them with gatsby-image
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
+
+exports.createResolvers = ({
+  actions,
+  cache,
+  createNodeId,
+  createResolvers,
+  store,
+  reporter,
+}) => {
+  const { createNode } = actions
+  createResolvers({
+    WPGraphQL_MediaItem: {
+      imageFile: {
+        type: `File`,
+        resolve(source, args, context, info) {
+          return createRemoteFileNode({
+            url: source.sourceUrl,
+            store,
+            cache,
+            createNode,
+            createNodeId,
+            reporter,
+          })
+        },
+      },
+    },
+  })
+}
