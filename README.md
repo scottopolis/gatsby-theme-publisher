@@ -1,10 +1,12 @@
 # gatsby-theme-publisher
 
-This is a theme for a headless WordPress site using Gatsby as a static front end.
+This is a theme for a headless WordPress site using Gatsby as a static front end. It has all the stuff I wanted for my personal site, so I wanted to put it all in one theme.
+
+I borrowed heavily from other themes, props to [Jeff at Northstack](https://github.com/northstack/gatsby-wordpress-twenty-nineteen), [Zac Gordon](https://github.com/zgordon/tabor-gatsby-theme), and the [Tailwind Starter Theme](https://github.com/talensjr/gatsby-theme-tailwindcss).
 
 Demo: [scottbolinger.com](https://scottbolinger.com)
 
-Note: This is still very experimental, don't use on a production site unless you're willing to deal with some bugs!
+*Note: This is still very experimental, don't use on a production site unless you're willing to deal with some bugs!*
 
 ### Features:
 
@@ -15,7 +17,7 @@ Note: This is still very experimental, don't use on a production site unless you
 - SEO tags
 - Sitemap
 - Google analytics
-- Images via Gatsby Image
+- Static Featured Images via Gatsby Image
 
 You can use my WP Netlify Deploy plugin to automatically rebuild on Netlify when you create or update a post.
 
