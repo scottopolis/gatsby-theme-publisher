@@ -12,7 +12,6 @@ const Logo = ( { data } ) => {
         width="150"
         height="150"
         className="h-full w-auto block"
-        alt={data}
         itemProp="logo"
       />
     </Link>

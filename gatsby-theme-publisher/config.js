@@ -8,7 +8,9 @@
  */
 const config = {
   wordPressUrl: `https://designbyscott.wpengine.com`,
-  dynamicComments: true
+  dynamicComments: true,
+  gaTrackingId: '',
+  mailChimpEndpoint: ''
 }
 
 module.exports = config
