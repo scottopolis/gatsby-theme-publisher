@@ -1,10 +1,8 @@
 /**
- * I'm thinking we'll probably end up
- * adding this to the .gitignore and have folks configure this on their own?
- *
- * ¯\_(ツ)_/¯
- *
- * @type {{wordPressUrl: string}}
+ * Add your site configuration details
+ * wordPressUrl is the WP site where you want to fetch data from
+ * siteUrl is the live site where people visit your front end
+ * mailChimpEndpoint see https://github.com/benjaminhoffman/gatsby-plugin-mailchimp#mailchimp-endpoint
  */
 const config = {
   title: `Scott Bolinger`,
